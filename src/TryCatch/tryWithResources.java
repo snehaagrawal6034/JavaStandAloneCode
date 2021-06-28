@@ -14,9 +14,8 @@ public class tryWithResources {
                 throwSomeException();
                 fileInputStream.read();
             } catch (Exception ignored) {
+                System.out.println("ere");
             }
-
-
         }
 
         private static void throwSomeException() {

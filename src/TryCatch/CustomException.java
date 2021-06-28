@@ -10,6 +10,7 @@ public class CustomException {
     }
 
     public static void main(String args[]){
+
         try{
             validate(13);
         }catch(InvalidAgeException m){System.out.println("Exception occured: "+m);}

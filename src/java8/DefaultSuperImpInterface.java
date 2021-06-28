@@ -1,6 +1,6 @@
 package java8;
 
-public class DefaultSuperImpInterface implements ClickListener, ClickListener2 {
+public class DefaultSuperImpInterface implements ClickListener, ClickListener2, ClickListener3 {
 
     /*  1. Class can implement multiple interface but it has to override the methods if any in common else
      * use InterfaceName.super.methodname */
@@ -14,13 +14,15 @@ public class DefaultSuperImpInterface implements ClickListener, ClickListener2 {
 
     @Override
     public void arbit() {
-        System.out.println("you are here");
+        // this is inside object
         ClickListener.super.arbit();
         ClickListener2.super.arbit();
+        System.out.println("this is here");
     }
 
+
     public static void main(String[] args) {
-         DefaultSuperImpInterface a =new DefaultSuperImpInterface();
+         ClickListener a =new DefaultSuperImpInterface();
          a.arbit();
          a.onClick("str1","str2");
     }
@@ -38,4 +40,7 @@ interface ClickListener2 {
     default void arbit() {
         System.out.println("you are there");
     }
+}
+
+interface ClickListener3 {
 }

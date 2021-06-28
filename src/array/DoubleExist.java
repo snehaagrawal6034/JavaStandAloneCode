@@ -6,7 +6,7 @@ import java.util.Set;
 public class DoubleExist {
         public boolean checkIfExist(int[] arr) {
 
-            Set s = new HashSet<Integer>();
+            Set<Integer> s = new HashSet();
 
             for (int num: arr) {
 

@@ -13,7 +13,11 @@ public class Biagram {
                 outputList.add(arrOfStr[i+2]);
             }
         }
-        return outputList.toArray(new String[0]);
+        String []s = outputList.toArray(new String[0]);
+        for (String s1 : s) {
+            System.out.println(s1);
+        }
+        return s;
     }
 
     public static void main(String[] args) {
