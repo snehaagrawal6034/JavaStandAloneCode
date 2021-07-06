@@ -4,7 +4,7 @@ public final class Singleton {
 //    private static final Singleton VAL = new Singleton();
 
     private Singleton() {
-        // Some things to do.
+        System.out.println("Hey , I am Singleton");
     }
 
 //    public static Singleton getInstance() {

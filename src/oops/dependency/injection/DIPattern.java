@@ -1,4 +1,4 @@
-package oops.di;
+package oops.dependency.injection;
 
 public class DIPattern {
 

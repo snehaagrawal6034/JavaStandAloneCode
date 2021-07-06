@@ -8,6 +8,10 @@ public class BreadMaker {
                 .setMilkBread(true)
                 .build();
 
-        BreadComposition nonMilkBread = new BreadComposition.Builder().setHeight(1).setWidth(1).setMilkBread(false).build();
+        BreadComposition nonMilkBread = new BreadComposition.Builder()
+                .setHeight(1)
+                .setWidth(1)
+                .setMilkBread(false)
+                .build();
     }
 }
