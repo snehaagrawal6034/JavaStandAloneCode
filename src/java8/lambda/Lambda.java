@@ -1,7 +1,6 @@
-package java8;
+package java8.lambda;
 
-import java.util.Arrays;
-import java.util.List;
+import java8.lambda.ClickListen;
 
 public class Lambda {
 
@@ -26,10 +25,3 @@ public class Lambda {
 
     }
 }
-@FunctionalInterface
-interface ClickListen {
-        String onClick(String abc, String xyz);
-        default void arbit() {
-            System.out.println("i ma here");
-        }
-    }
