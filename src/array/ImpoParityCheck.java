@@ -3,18 +3,18 @@ package array;
 public class ImpoParityCheck {
 
         public int[] parityCheck(int A[]){
-            int even = 0;
+            int j = 0;
             int B[]=new int[A.length];
             for (int i = 0; i <A.length ; i++) {
                 if(A[i]%2==0){
-                    B[even]=A[i];
-                    even++;
+                    B[j]=A[i];
+                    j++;
                 }
             }
             for (int i = 0; i <A.length ; i++) {
                 if(A[i]%2!=0){
-                    B[even]=A[i];
-                    even++;
+                    B[j]=A[i];
+                    j++;
                 }
             }
             return B;

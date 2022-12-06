@@ -1,5 +1,6 @@
 package hashtable;
 
+// search leetCode
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +19,6 @@ public class inIndex {
             int min = Integer.MAX_VALUE;
             for(int i=0; i<list1.length; i++) {
                 if(map2.containsKey(list1[i])) {
-
                     int indexIn2 = map2.get(list1[i]) + i;
                     resultMap.put(list1[i], indexIn2);
                     if(min > indexIn2) {
@@ -33,6 +33,5 @@ public class inIndex {
                 }
             }
             return result.toArray(new String[0]);
-//
         }
     }

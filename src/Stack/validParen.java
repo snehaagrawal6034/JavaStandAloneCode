@@ -6,28 +6,32 @@ import java.util.Stack;
 
 public class validParen {
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
-        Map<Character, Character> closeToOpen = new HashMap<>();
-        closeToOpen.put(']', '[');
-        closeToOpen.put(')', '(');
-        closeToOpen.put('}', '{');
-        for(char c: s.toCharArray()) {
-            if(closeToOpen.containsKey(c)) {
-                if(stack.isEmpty()) {
-                    return false; // no opening bracket for closing bracket
-                }
-                if(closeToOpen.get(c) != stack.pop()) {
+
+        Map<Character,Character> closeToOpen = new HashMap<>();
+        Stack<Character> st = new Stack<>();
+
+        closeToOpen.put(')','(');
+        closeToOpen.put(']','[');
+        closeToOpen.put('}','{');
+
+        for(char ch : s.toCharArray()){
+
+            if(closeToOpen.containsKey(ch)){
+                if(st.isEmpty()){
+                    return false;
+                } else if(st.pop()!=closeToOpen.get(ch)){
                     return false;
                 }
-            } else {
-                // opening bracket case.
-                stack.push(c);
+            } else{
+                st.push(ch);
             }
+
         }
-        if(stack.size() == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return st.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        validParen vp = new validParen();
+        System.out.println( vp.isValid("()"));
     }
 }

@@ -20,7 +20,7 @@ public class CountBinarySubstrings {
 
     public static void main(String[] args) {
         CountBinarySubstrings countBinarySubstrings = new CountBinarySubstrings();
-        System.out.println(countBinarySubstrings.countBinarySubstrings("000011100"));
+        System.out.println(countBinarySubstrings.countBinarySubstrings("00110011"));
     }
 }
 

@@ -10,7 +10,7 @@ public class DoubleExist {
 
             for (int num: arr) {
 
-                if(s.contains(num*2) || (s.contains(num/2)) && num%2==0){
+                if(s.contains(num*2) || (s.contains(num/2))){
                     return true;
                 }
                 s.add(num);
@@ -20,7 +20,7 @@ public class DoubleExist {
         }
     public static void main(String[] args) {
         DoubleExist ad = new DoubleExist();
-        int[] nums = new int[]{2,3,5};
+        int[] nums = new int[]{2,3,5,2,6};
          boolean b=ad.checkIfExist(nums);
             System.out.print(b);
     }

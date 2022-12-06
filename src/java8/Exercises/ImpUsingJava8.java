@@ -35,7 +35,7 @@ public class ImpUsingJava8 {
 
 //        3. print last name beginning with F
         printConditionally(people, (p -> p.getLastName().startsWith("F")));
-        printConditionally2(people , p -> p.getLastName().startsWith("A") , p -> System.out.println("using Predicate"));
+        printConditionally2(people , p -> p.getLastName().startsWith("J") , p -> System.out.println("using Predicate"));
 
     }
 

@@ -46,8 +46,8 @@ public class test {
         int[] a = t.sortedSquares(new int[]{-2, 4, 0, 1, -6});
         System.out.println(Arrays.toString(a));
         t.printLength();
-         //int count = t.findEvenNumbers(new int[]{88,88,99,10,33,1,2,98});
-        // System.out.println(count);
+//         int count = t.findEvenNumbers(new int[]{88,88,99,10,33,1,2,98});
+//         System.out.println(count);
     }
 }
 

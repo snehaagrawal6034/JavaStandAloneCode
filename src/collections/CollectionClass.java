@@ -17,6 +17,7 @@ public class CollectionClass {
         Collections.reverse(integers);
 
         Integer[] list = integers.toArray(new Integer[] {});
+        System.out.println(" "+ list);
 
         Integer[] a  = {1,2,3,4};
         sum(1,2,4,5);
@@ -28,6 +29,7 @@ public class CollectionClass {
         for (int i : a) {
             sum = sum + i;
         }
+        System.out.println(sum);
         return sum;
     }
 }

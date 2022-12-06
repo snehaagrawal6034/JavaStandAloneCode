@@ -4,21 +4,22 @@ public class ConsistentString {
 
     public int countConsistentStrings(String allowed, String[] words) {
 
-        boolean[] bol = new boolean[26];
-        int count = words.length;
-        for (char ch: allowed.toCharArray()) {
-            bol[ch-'a']=true;
+        boolean bool[] = new boolean[26];
+        int counter = words.length;
+
+        for(char c : allowed.toCharArray()){
+            bool[c-'a'] = true;
         }
-        for(String word:words){
-            for(char c:word.toCharArray()){
-                if(bol[c-'a']==false) {
-                    count = count - 1;
+
+        for(String word : words){
+            for(char c : word.toCharArray()){
+                if(!bool[c-'a']){
+                    counter--;
                     break;
                 }
-
             }
         }
-        return count;
+        return counter;
     }
 
 

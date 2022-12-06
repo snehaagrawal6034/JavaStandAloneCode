@@ -5,42 +5,50 @@ import java.util.List;
 
 public class ReformatString {
     public String reformat(String s) {
+        char ch[] = s.toCharArray();
+        int digit = 0;
+        int character = 0;
+        StringBuilder sb = new StringBuilder();
         List<Character> list1 = new ArrayList<>();
         List<Character> list2 = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
 
-        // c - '0' >=0 && c - '0' <= 9
-        // '0', '1' - '0' = 1, '2'-'0'=2
-        // 'A' c-'A'>=0 && c-'A'<=25 - capital
-        for (char c : s.toCharArray()) {
-            if (c - 'a' >= 0 && c - 'a' <= 25) {
-                list1.add(c);
-            } else {
-                list2.add(c);
+        for(int i=0;i<s.length();i++){
+            if(Character.isDigit(ch[i])){
+                digit++;
+                list1.add(ch[i]);
+            } else{
+                character++;
+                list2.add(ch[i]);
             }
         }
 
-        if (Math.abs(list1.size() - list2.size()) > 1) {
+        if(Math.abs(digit-character)<=1){
+            for(int i=0;i<Math.min(list1.size(), list2.size());i++){
+                if(list1.size() > list2.size()) {
+                    sb.append(list1.get(i));
+                    sb.append(list2.get(i));
+                } else {
+                    sb.append(list2.get(i));
+                    sb.append(list1.get(i));
+                }
+            }
+            int i = Math.min(list1.size(), list2.size());
+            if(i<list1.size()) {
+                sb.append(list1.get(i));
+            } else if (i<list2.size()) {
+                sb.append(list2.get(i));
+            }
+        } else{
             return "";
-        } else {
-            if ((list1.size() > list2.size())) {
-                for (int i = 0; i < list2.size(); i++) {
-                    sb.append(list1.get(i));
-                    sb.append(list2.get(i));
-                }
-                sb.append(list1.get(list1.size() - 1));
-            } else {
-                for (int i = 0; i < list1.size(); i++) {
-                    sb.append(list2.get(i));
-                    sb.append(list1.get(i));
-                }
-                if ((list2.size() > list1.size())) {
-                    sb.append(list2.get(list2.size() - 1));
-                }
-            }
         }
-
 
         return sb.toString();
+        // Character.isDigit(s)
+        // Character.isAlphabetic(s)
+    }
+
+    public static void main(String[] args) {
+        ReformatString rs = new ReformatString();
+        System.out.println(rs.reformat("ab0c2"));
     }
 }

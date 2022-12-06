@@ -2,40 +2,19 @@ package array;
 
 public class DoubleZeros {
 
-    public void dblzeros(int[] nums){
-        int counter=0;
-        int lastIndex=nums.length-1;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]==0){
-                counter+=2;
-            }
-            else {
-                counter ++;
-            }
-            if(counter>=nums.length){
-                lastIndex=i;
-                break;
-            }
-        }
-        int newIndexToCopy = nums.length-1;
-        boolean isLastZero = counter > nums.length;
-        for (int i =lastIndex ; i >=0 ; i--) {
-            if (newIndexToCopy == i) {
-                 break;
-            }
-            if(nums[i]==0){
-                if (isLastZero) {
-                    nums[newIndexToCopy]= 0;
-                    isLastZero = false;
-                    newIndexToCopy--;
+    public void duplicateZeros(int[] arr) {
+        int[] copy = arr.clone();
+        int j = 0;
+        for (int i = 0; i < copy.length; i++) {
+            if (j < arr.length) {
+                if (copy[i] == 0) {
+                    arr[j++] = 0;
+                    if (j < arr.length) {
+                        arr[j++] = 0;
+                    }
                 } else {
-                    nums[newIndexToCopy-1] = 0;
-                    nums[newIndexToCopy]= 0;
-                    newIndexToCopy-=2;
+                    arr[j++] = copy[i];
                 }
-            } else {
-                nums[newIndexToCopy] = nums[i];
-                newIndexToCopy--;
             }
         }
     }
@@ -43,7 +22,7 @@ public class DoubleZeros {
     public static void main(String[] args) {
         DoubleZeros dbl = new DoubleZeros();
         int[] input = {1,0,2,3,0,0,5,0};
-        dbl.dblzeros(input);
+        dbl.duplicateZeros(input);
         printArray(input);
     }
 

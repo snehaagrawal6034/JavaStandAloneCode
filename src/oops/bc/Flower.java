@@ -16,4 +16,12 @@ public final class Flower {
     public String getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "Flower{" +
+                "cost=" + cost +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

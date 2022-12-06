@@ -14,9 +14,9 @@ public class Biagram {
             }
         }
         String []s = outputList.toArray(new String[0]);
-        for (String s1 : s) {
-            System.out.println(s1);
-        }
+//        for (String s1 : s) {
+//            System.out.println(s1);
+//        }
         return s;
     }
 

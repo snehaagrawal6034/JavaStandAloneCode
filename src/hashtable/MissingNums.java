@@ -24,7 +24,7 @@ public class MissingNums {
 
     public static void main(String[] args) {
         MissingNums abc = new MissingNums();
-        System.out.println(abc.numDisappearArr(new int[]{5,1,2,7,9,3,14,9,9}));
+        System.out.println(abc.numDisappearArr(new int[]{5,1,2,7,10,3,14,10,10}));
     }
 }
 

@@ -1,22 +1,26 @@
 package String;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class FirstNonRepeatingChar {
     public int firstUniqChar(String s) {
         // int -> 0, Integer -> null
-        HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (hm.get(ch) == null) {
-                hm.put(ch, 1);
-            } else {
-                hm.put(ch, hm.get(ch) + 1);
-            }
+        char ch[] = s.toCharArray();
+        Map<Character,Integer> mp = new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            mp.put(ch[i],mp.getOrDefault(ch[i],0)+1);
         }
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (hm.get(ch) == 1) {
+        // l->1 - 512
+        // e-> 2 - 210
+        // t->1
+
+        // hashing
+        // list- sorted
+        // map, set -
+
+        for(int i=0;i<s.length();i++){
+            if(mp.get(ch[i])==1) {
                 return i;
             }
         }

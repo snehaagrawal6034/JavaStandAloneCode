@@ -41,6 +41,6 @@ public class ReplaceAllUQues {
 
     public static void main(String[] args) {
         ReplaceAllUQues replaceAllUQues = new ReplaceAllUQues();
-        System.out.println(replaceAllUQues.modifyString("a?a"));
+        System.out.println(replaceAllUQues.modifyString("??a?a?"));
     }
 }

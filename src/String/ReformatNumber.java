@@ -1,7 +1,7 @@
 package String;
 
 class ReformatNumber {
-    public String reformatNumber(String number) {
+    public static String reformatNumber(String number) {
         //"1-23-45 6"
         // 123-45
         // remove whitespace and -
@@ -21,6 +21,10 @@ class ReformatNumber {
          }
 
         return number.substring(0,3)+"-"+reformatNumber(number.substring(3));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(ReformatNumber.reformatNumber("1-23-45 6"));
     }
 
 }

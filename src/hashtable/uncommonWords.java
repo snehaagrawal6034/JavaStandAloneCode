@@ -8,17 +8,12 @@ import java.util.Map;
 public class uncommonWords {
         public String[] uncommonFromSentences(String A, String B) {
 
-            String finalString = null;
             String s = A.concat(" ").concat(B);
-            String[] splited = s.split("\\s+");
+            String[] splited = s.split("\\s");
             Map<String,Integer> m = new HashMap();
 
             for(int i=0;i<splited.length;i++){
-                if(m.containsKey(splited[i])){
-                    m.put(splited[i],m.get(splited[i])+1);
-                } else{
-                    m.put(splited[i],1);
-                }
+               m.put(splited[i],m.getOrDefault(splited[i],0)+1);
             }
 
             List<String> result = new ArrayList<>();

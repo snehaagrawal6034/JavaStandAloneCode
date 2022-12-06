@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 //When super-class behavior changes, sub-class functionality can be broken without any modification on its part.
 public class ReaderWriter implements Reader, Writer {
     private final Reader reader;
-    private Writer writer;
+    private final Writer writer;
 
     // DI
     public ReaderWriter(Reader reader, Writer writer) {
@@ -30,7 +30,9 @@ public class ReaderWriter implements Reader, Writer {
         writer.write(content, file);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         ReaderWriter readerWriter = new ReaderWriter(new ReaderImpl(), new WriterImpl());
+        readerWriter.read("w");
+        readerWriter.write("yayyy","done");
     }
 }

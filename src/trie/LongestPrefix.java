@@ -2,9 +2,8 @@ package trie;
 
 public class LongestPrefix {
     public static void main(String[] args) {
-
         // flower
-        String prefix = new LongestPrefix().longestCommonPrefix(new String[]{"fflower", "flow", "flat"});
+        String prefix = new LongestPrefix().longestCommonPrefix(new String[]{"flower", "flow", "flat"});
         System.out.println(prefix);
      }
 

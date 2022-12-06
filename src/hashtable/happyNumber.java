@@ -1,7 +1,5 @@
 package hashtable;
 
-import array.FindCommonChars;
-
 import java.util.HashSet;
 import java.util.Set;
 

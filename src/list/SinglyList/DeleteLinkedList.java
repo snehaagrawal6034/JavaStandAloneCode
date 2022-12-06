@@ -4,14 +4,10 @@ public class DeleteLinkedList {
     Node head;
 
     public void delete(Node node) {
-        Node hc = head;
-        while (hc != null && hc.next != node) {
-            hc = hc.next;
-        }
-        if (hc != null && hc.next != null) {
-            hc.next = hc.next.next;
-        }
+        node.data = node.next.data;
+        node.next = node.next.next;
     }
+
     static class Node {
         int data;
         Node next;
@@ -29,6 +25,12 @@ public class DeleteLinkedList {
         }
     }
 
+   // 1->2->3->4
+     //       1->2->4
+    // if(node.next == node3) {
+    // node.next = node.next.next;
+    // }
+    //
     public static void main(String[] args) {
         DeleteLinkedList deleteLinkedList = new DeleteLinkedList();
         deleteLinkedList.head = new Node(1);
@@ -38,7 +40,10 @@ public class DeleteLinkedList {
         Node node3 = new Node(3);
         node2.next = node3;
 
-        deleteLinkedList.delete(node2);
+        Node node4 = new Node(4);
+        node3.next = node4;
+
+        deleteLinkedList.delete(node4);
 
         System.out.println(deleteLinkedList.head);
     }

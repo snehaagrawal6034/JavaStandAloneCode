@@ -5,9 +5,8 @@ import java.util.List;
 
 public class AddTwoNums {
 
-    public Node addTwoNumbers(Node l1, Node l2) {
+    public void addTwoNumbers(Node l1, Node l2) {
         int lastcarry = 0;
-        int lastDigit = 0;
 
         Node head = new Node(-1);
         Node dummy = head;
@@ -18,10 +17,8 @@ public class AddTwoNums {
 
             int sum = l1_val + l2_val + lastcarry;
             lastcarry = sum / 10;
-            lastDigit = sum % 10;
 
-            Node newNode = new Node(lastDigit);
-            dummy.next = newNode;
+            dummy.next = new Node(sum % 10);
 
             if (l1 != null) {
                 l1 = l1.next;
@@ -34,13 +31,12 @@ public class AddTwoNums {
         if (lastcarry > 0) {
             dummy.next = new Node(lastcarry);
         }
-        return head.next;
     }
-
+    // -1->2->4->3
     public static void main(String[] args) {
         AddTwoNums obj = new AddTwoNums();
-        List<Integer> list1 = Arrays.asList(99);
-        List<Integer> list2 = Arrays.asList(9);
+        List<Integer> list1 = Arrays.asList(2,4,3);
+        List<Integer> list2 = Arrays.asList(5,6,4);
         Node randomNode = new Node(-1);
         Node randomNode2 = new Node(-1);
         Node randomNodeCopy = randomNode;
@@ -53,8 +49,7 @@ public class AddTwoNums {
             randomNodeCopy2.next = new Node(integer);
             randomNodeCopy2 = randomNodeCopy2.next;
         }
-//        System.out.println(randomNode.next);
-//        System.out.println(randomNode2.next);
+
         obj.addTwoNumbers(randomNode.next, randomNode2.next);
     }
 

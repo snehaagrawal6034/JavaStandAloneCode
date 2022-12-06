@@ -1,7 +1,5 @@
 package Stack;
 
-import array.FindCommonChars;
-
 import java.util.Stack;
 
 public class RemoveAdaDup {
@@ -16,15 +14,15 @@ public class RemoveAdaDup {
                 }
             }
 
-            StringBuilder sb = new StringBuilder();
-            while(!st.isEmpty()){
-                sb.append(st.pop());
-            }
-            return sb.toString();
+//            StringBuilder sb = new StringBuilder();
+//            while(!st.isEmpty()){
+//                sb.append(st.pop());
+//            }
+            return st.toString();
         }
     public static void main(String[] args) {
         RemoveAdaDup ts = new RemoveAdaDup();
         String str = "abbaca";
-        ts.removeDuplicates(str);
+        System.out.println(ts.removeDuplicates(str));
     }
 }

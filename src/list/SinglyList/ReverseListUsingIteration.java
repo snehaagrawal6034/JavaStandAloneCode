@@ -7,12 +7,13 @@ public class ReverseListUsingIteration {
     public Node reverseList(Node head) {
 
         Node prev = null;
+        Node cur = head;
 
-        while(head!= null){
-            Node nextNode = head.next;
-            head.next=prev;
-            prev=head;
-            head=nextNode;
+        while(cur!= null){
+            Node temp = cur.next;
+            cur.next=prev;
+            prev=cur;
+            cur=temp;
         }
         return prev;
     }

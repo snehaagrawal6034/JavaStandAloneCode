@@ -25,6 +25,16 @@ public class DefaultSuperImpInterface implements ClickListener, ClickListener2, 
          ClickListener a =new DefaultSuperImpInterface();
          a.arbit();
          a.onClick("str1","str2");
+
+        ClickListener b =new ClickListener(){
+
+            public String onClick(String abc, String xyz) {
+                System.out.println("returning interface val");
+                return null;
+            }
+        };
+        b.onClick("str1","str2");
+
     }
 }
 
@@ -37,6 +47,7 @@ interface ClickListener {
 }
 
 interface ClickListener2 {
+    String onClick(String abc, String xyz);
     default void arbit() {
         System.out.println("you are there");
     }

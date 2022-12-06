@@ -6,7 +6,6 @@ import java.util.List;
 public class OddEvenList {
 
     public Node oddEvenList(Node head) {
-
         if(head==null){
             return null;
         }
@@ -47,8 +46,13 @@ public class OddEvenList {
                     ", next=" + next +
                     '}';
         }
-        public Node(int val) {
+        Node() {
+        }
+        Node(int val) {
             this.val = val;
+        }
+        Node(int val, Node next) {
+            this.val = val; this.next = next;
         }
     }
 }

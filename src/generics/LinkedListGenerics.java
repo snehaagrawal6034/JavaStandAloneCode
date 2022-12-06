@@ -13,14 +13,14 @@ public class LinkedListGenerics {
             sum = sum + head.data;
             head = head.next;
         }
-
+        System.out.println("sum: "+sum);
     }
     // T is same as T extends Object
-    public static class Node<T> {
-        T data;
-        Node<T> next;
+    public static class Node<N> {
+        N data;
+        Node<N> next;
 
-        public Node(T data) {
+        public Node(N data) {
             this.data = data;
         }
     }

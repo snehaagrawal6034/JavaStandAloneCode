@@ -1,24 +1,23 @@
 package String;
 
 public class DecryptAlphaToInteger {
-
     public String freqAlphabets(String s) {
 
         StringBuilder sb = new StringBuilder();
         int i=0;
         while(i<s.length()){
-         if(i+2<s.length() && s.charAt(i+2)=='#'){
-             sb.append((char)('a'+Integer.parseInt(s.substring(i,i+2))-1));
-             i=i+3;
-         }
-         else {
-             sb.append((char)('a'+(Integer.parseInt(s.substring(i, i+1))-1)));
-             i=i+1;
-         }
-     }
+            if(i+2<s.length() && s.charAt(i+2) == '#'){
+                char current = (char)('a' + Integer.parseInt(s.substring(i,i+2)) -1);
+                sb.append(String.valueOf(current));
+                i = i + 3;
+            } else{
+                char current = (char)('a' + Integer.parseInt(s.substring(i,i+1)) -1);
+                sb.append(String.valueOf(current));
+                i = i + 1;
+            }
+        }
         return sb.toString();
     }
-
 
     public static void main(String[] args) {
         DecryptAlphaToInteger test = new DecryptAlphaToInteger();

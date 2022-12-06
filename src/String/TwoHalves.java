@@ -4,25 +4,38 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TwoHalves {
     public boolean halvesAreAlike(String s) {
-        boolean bol = false;
-        int len=s.length();
-        int halfLength = len/2;
-        int odd=0;
-        int even=0;
-        List<Character> chars = Arrays.asList(new Character[] {'a', 'e', 'i', 'o', 'u', 'A','E','I','O','U'});
-        HashSet<Character> set= new HashSet<>(chars);
-        for (int i = 0; i <halfLength ; i++) {
-            if(set.contains(s.charAt(i))){
-                odd+=1;
-            }
-            if(set.contains(s.charAt(halfLength+i))){
-                even+=1;
+//        List<Character> chars = Arrays.asList(new Character[] {'a', 'e', 'i', 'o', 'u', 'A','E','I','O','U'});
+
+
+//        Character[] array = {'a', 'e', 'i', 'o', 'u', 'A','E','I','O','U'};
+//        List<Character> chars = Arrays.asList(array);
+
+        List<Character> chars = Stream.of('a', 'e', 'i', 'o', 'u', 'A','E','I','O','U')
+                .collect(Collectors.toList());
+
+
+        int firstHalf = 0;
+        int secondhalf = 0;
+        char ch[]=s.toCharArray();
+
+        for(int i=0;i<s.length()/2;i++){
+            if(chars.contains(ch[i])){
+                firstHalf++;
             }
         }
-        if(odd==even){
+
+        for(int i=s.length()/2;i<s.length();i++){
+            if(chars.contains(ch[i])){
+                secondhalf++;
+            }
+        }
+
+        if(firstHalf==secondhalf){
             return true;
         }
         return false;

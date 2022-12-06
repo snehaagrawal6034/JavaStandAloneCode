@@ -16,6 +16,6 @@ public class PropertiesFile {
 
     public static void main(String[] args) throws Exception {
         PropertiesFile propertiesFile = new PropertiesFile();
-        System.out.println(propertiesFile.getToken());
+        propertiesFile.getToken();
     }
 }

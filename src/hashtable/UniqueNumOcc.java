@@ -20,7 +20,7 @@ public class UniqueNumOcc {
 
     public static void main(String[] args) {
         UniqueNumOcc ad = new UniqueNumOcc();
-        boolean result = ad.uniqueOccurrences(new int[]{1,4,3});
+        boolean result = ad.uniqueOccurrences(new int[]{1,4,3,4});
         System.out.print(result);
     }
 }

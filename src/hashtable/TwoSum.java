@@ -1,15 +1,32 @@
 package hashtable;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer,Integer> twoSum = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if(twoSum.containsKey(complement)) return new int[]{i,twoSum.get(complement)};
-            twoSum.put(nums[i],i);
+//        Map<Integer,Integer> twoSum = new HashMap<>();
+//        for (int i = 0; i < nums.length; i++) {
+//            int complement = target - nums[i];
+//            if(twoSum.containsKey(complement))
+//                return new int[]{
+//                        i,twoSum.get(complement)
+//            };
+//            twoSum.put(nums[i],i);
+//        }
+//        return null;
+
+        List<Integer> list = new ArrayList<>();
+
+        for(int i=0;i<nums.length;i++){
+            int complement = target-nums[i];
+            if(list.contains(complement)){
+                return new int[]{i,list.indexOf(complement)};
+            } else{
+                list.add(nums[i]);
+            }
         }
         return null;
     }
